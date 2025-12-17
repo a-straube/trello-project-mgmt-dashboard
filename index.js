@@ -374,6 +374,7 @@ setScaleAndRunnerWidth = (scaleHigh) => {
 }
 
 Trello.get('boards/QCJDklm5/cards', function(cards) {
+    console.log(cards);
     $.each(cards, function(ix, card) {
         calcPhaseTotals(card);
         calcDepartmentTotals(card);
