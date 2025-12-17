@@ -1,3 +1,5 @@
+import cardData from 'trelloCardsData.json';
+
 const teamMembers = [
     {
         name: "Leonardo Vinci",
@@ -373,20 +375,32 @@ setScaleAndRunnerWidth = (scaleHigh) => {
     setTimeout(clearRunnerAnimations,3000);
 }
 
-Trello.get('boards/QCJDklm5/cards', function(cards) {
-    $.each(cards, function(ix, card) {
-        calcPhaseTotals(card);
-        calcDepartmentTotals(card);
-        allCards.push(card);
-    })
-    getDateToday();
-    makePhaseChart();
-    fillSprintChart();
-    populateEmployeeBreakdownTabs();
-    checkForEmptyEmployeePhaseLists();
-}, function (error){
-    console.log(error);
-});
+// Trello.get('boards/QCJDklm5/cards', function(cards) {
+//     $.each(cards, function(ix, card) {
+//         calcPhaseTotals(card);
+//         calcDepartmentTotals(card);
+//         allCards.push(card);
+//     })
+//     getDateToday();
+//     makePhaseChart();
+//     fillSprintChart();
+//     populateEmployeeBreakdownTabs();
+//     checkForEmptyEmployeePhaseLists();
+// }, function (error){
+//     console.log(error);
+// });
+
+cardData.forEach(card => {
+    calcPhaseTotals(card);
+    calcDepartmentTotals(card);
+    allCards.push(card);
+})
+
+getDateToday();
+makePhaseChart();
+fillSprintChart();
+populateEmployeeBreakdownTabs();
+checkForEmptyEmployeePhaseLists();
     
 // OLD LAZY LOAD FOR DEPARTMENT WORKLOAD AND SPRINT CHARTS, REPLACED WITH WINDOW.ONSCROLL BELOW -221201
 // -----------------------------------------------------------------------------------------------------
