@@ -428,19 +428,11 @@ h2.side-bar__section-header span {
   background-color: rgba(252, 252, 252, 0.5);
   border: 1px solid rgba(252, 252, 252, 0.4);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  display: none!important;
-  max-width: 800px;
   padding: 36px 17px 21px 28px;
 }
 @media (min-width: 440px) {
   #productionPhaseChart {
-    display: block!important;
-  }
-}
-@media (min-width: 1400px) {
-  #productionPhaseChart {
-    max-height: 400px;
-    max-width: 950px;
+    display: flex!important;
   }
 }
 .sprint-chart {
