@@ -384,7 +384,6 @@ Trello.get('boards/QCJDklm5/cards', function(cards) {
     fillSprintChart();
     populateEmployeeBreakdownTabs();
     checkForEmptyEmployeePhaseLists();
-    console.log(JSON.stringify(allCards, null, 2)); // Pretty printed output
 }, function (error){
     console.log(error);
 });
