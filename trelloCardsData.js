@@ -6298,3 +6298,5 @@ cardData = [
     "mirrorSourceId": null
   }
 ]
+
+export default cardData;
