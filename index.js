@@ -6698,12 +6698,6 @@ cardData.forEach(card => {
     calcDepartmentTotals(card);
     allCards.push(card);
 })
-
-getDateToday();
-makePhaseChart();
-fillSprintChart();
-populateEmployeeBreakdownTabs();
-checkForEmptyEmployeePhaseLists();
     
 // OLD LAZY LOAD FOR DEPARTMENT WORKLOAD AND SPRINT CHARTS, REPLACED WITH WINDOW.ONSCROLL BELOW -221201
 // -----------------------------------------------------------------------------------------------------
@@ -7005,3 +6999,9 @@ checkForEmptyEmployeePhaseLists = async () => {
         }
     })
 }
+
+getDateToday();
+makePhaseChart();
+fillSprintChart();
+populateEmployeeBreakdownTabs();
+checkForEmptyEmployeePhaseLists();
