@@ -1,4 +1,4 @@
-import cardData from 'trelloCardsData.json';
+import cardData from 'trelloCardsData.js';
 
 const teamMembers = [
     {
