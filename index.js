@@ -1,4 +1,4 @@
-import { cardData } from 'trelloCardsData.js';
+import { cardData } from '/trelloCardsData.js';
 
 /////////////////
 // START LOGIC //
