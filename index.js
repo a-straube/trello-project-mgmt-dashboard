@@ -73,7 +73,7 @@ let adminCount = 0,
     productionCount = 0,
     salesCount = 0;
 
-function addSprintChartXAxisScale = (sprintTaskCompletionTotals, sprintChartList) => {
+addSprintChartXAxisScale = (sprintTaskCompletionTotals, sprintChartList) => {
     const highestTaskCompletionTotal = Math.max(...sprintTaskCompletionTotals),
         scaleHigh = highestTaskCompletionTotal+3;
     
@@ -94,7 +94,7 @@ function addSprintChartXAxisScale = (sprintTaskCompletionTotals, sprintChartList
     setScaleAndRunnerWidth(scaleHigh);
 }
 
-function calcDepartmentTotals = (card) => {
+calcDepartmentTotals = (card) => {
     let cardLabels = card.labels;
     cardLabels.forEach(label => {
         let department = label.name;
@@ -114,7 +114,7 @@ function calcDepartmentTotals = (card) => {
     });
 }
 
-function calcPhaseTotals = (card) => {
+calcPhaseTotals = (card) => {
     let cardListID = card.idList;
     if(cardListID==='5ad3c6eb79d93844dc6b0b40') {
         toDoCount++;
@@ -131,7 +131,7 @@ function calcPhaseTotals = (card) => {
     }
 }
 
-function clearRunnerAnimations = () => {
+clearRunnerAnimations = () => {
     let runners = document.querySelectorAll('.sprintChartList__runner--invisible');
     let runnerContainers = document.querySelectorAll('.sprintChartList__runner-container');
     runners.forEach(runner => {
@@ -148,7 +148,7 @@ function clearRunnerAnimations = () => {
     })
 }
 
-function getDateToday = () => {
+getDateToday = () => {
     let today = new Date();
     today = today.toLocaleDateString();
 
@@ -157,7 +157,7 @@ function getDateToday = () => {
     });
 }
 
-function fillDepartmentWorkloadChart = (adminCount, devCount, hrCount, itCount, productionCount, salesCount) => {
+fillDepartmentWorkloadChart = (adminCount, devCount, hrCount, itCount, productionCount, salesCount) => {
     const ctx = document.getElementById('departmentWorkloadChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'doughnut',
@@ -206,7 +206,7 @@ function fillDepartmentWorkloadChart = (adminCount, devCount, hrCount, itCount, 
     });
 }
 
-function fillProductionPhaseDataList = () => {
+fillProductionPhaseDataList = () => {
     elToDoCount.innerHTML = toDoCount;
     elPhaseOneCount.innerHTML = phaseOneCount;
     elPhaseTwoCount.innerHTML = phaseTwoCount;
@@ -216,7 +216,7 @@ function fillProductionPhaseDataList = () => {
     fillGoalBar();
 }
 
-function fillRunnerContainer = (numberOfRunners, runnerContainer) => {
+fillRunnerContainer = (numberOfRunners, runnerContainer) => {
     for (let i = 0; i < numberOfRunners; i++) {
         let runner = document.createElement('li'),
             runnerDust = document.createElement('div');
@@ -229,7 +229,7 @@ function fillRunnerContainer = (numberOfRunners, runnerContainer) => {
 } 
 
 let sprintTaskCompletionTotals = [];
-function fillSprintChart = () => {
+fillSprintChart = () => {
     const sprintChartList = document.getElementById('sprintChartList');
 
     teamMembers.forEach(member => {
@@ -265,7 +265,7 @@ function fillSprintChart = () => {
     });
 }
 
-function fillGoalBar = () => {
+fillGoalBar = () => {
     const remainingToGoal = document.getElementById('remainingToGoal');
     const progressGoalBar = document.getElementById('progressGoalBar');
     const inProgressBar = document.getElementById('inProgressBar');
@@ -284,7 +284,7 @@ function fillGoalBar = () => {
     toDoBar.setAttribute('style', 'width: '+toDoPercentage+'%');
 }
 
-function makePhaseChart = () => {
+makePhaseChart = () => {
     fillProductionPhaseDataList();
     const ctx = document.getElementById('productionPhaseChart').getContext('2d');
     const myChart = new Chart(ctx, {
@@ -367,7 +367,7 @@ function makePhaseChart = () => {
     });
 }
 
-function setScaleAndRunnerWidth = (scaleHigh) => {
+setScaleAndRunnerWidth = (scaleHigh) => {
     const x = parseInt(scaleHigh);
     const runnerWidth = 100/x;
     [...document.querySelectorAll('.sprintChartList__runner')].forEach(runnerLIItem => {
@@ -479,7 +479,7 @@ function setAttributes(element, attributes) {
     });
 }
 
-function buildCardAccordion = (e_ID, e_AccordionBody) => {
+buildCardAccordion = (e_ID, e_AccordionBody) => {
     const cardAccordion = document.createElement('div'),
     accordionAttrs = {
         id: 'ca_'+e_ID,
@@ -577,7 +577,7 @@ function buildCardAccordion = (e_ID, e_AccordionBody) => {
     e_AccordionBody.appendChild(cardAccordion);
 }
 
-function tieCardsToEmployee = () => {
+tieCardsToEmployee = () => {
     teamMembers.forEach(async(employee, i) => {
         const e_ID = employee.trello_id,
             e_AccordionBodyID = 'e'+i,
@@ -654,7 +654,7 @@ function tieCardsToEmployee = () => {
     })
 }
 
-function populateEmployeeBreakdownTabs = () => {
+populateEmployeeBreakdownTabs = () => {
     const ebNav = document.getElementById('employeeBreakdownNav'),
     ebTabPanes = document.getElementById('employeeBreakdownTabPanes');
     
@@ -698,7 +698,7 @@ function populateEmployeeBreakdownTabs = () => {
     tieCardsToEmployee();
 }
 
-function checkForEmptyEmployeePhaseLists = async () => {
+checkForEmptyEmployeePhaseLists = async () => {
     const employeePhaseLists = await document.querySelectorAll('.employee-phase-list');
     employeePhaseLists.forEach(phaseList => {
         if(phaseList.children.length<1) {
