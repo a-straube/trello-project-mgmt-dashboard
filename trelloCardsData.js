@@ -1,4 +1,4 @@
-const cardData = [
+export const cardData = [
   {
     "id": "5ad3c82d8ac5afdb542bf3da",
     "agent": null,
@@ -6298,5 +6298,3 @@ const cardData = [
     "mirrorSourceId": null
   }
 ]
-
-export default cardData;
