@@ -47,6 +47,8 @@ const teamMembers = [
     }
 ];
 
+console.log('cardData = ', cardData);
+
 let allCards = [];
 
 // Phase count HTML elements
